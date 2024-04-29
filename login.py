@@ -129,7 +129,7 @@ class Login_Window:
         elif self.UserName.get()=="UserName" and self.UserPass.get()=="UserPass":
                 messagebox.showinfo("Success","Welcome To DashBoard")
         else:
-            conn=mysql.connector.connect(host="localhost",user="root",password='Admin@123',database="mydata")
+            conn=mysql.connector.connect(host="localhost",user="root",password='',database="mydata")
             my_cursor=conn.cursor()
             my_cursor.execute("select * from register where email=%s and password=%s",(
                                                                                     self.UserName.get(),
@@ -163,7 +163,7 @@ class Login_Window:
         elif self.txt_newpass.get()=="":
             messagebox.showerror("Error" "Please Enter New Password",parent=self.root2)
         else:
-            conn=mysql.connector.connect(host="localhost",user="root",password='Admin@123',database="mydata")
+            conn=mysql.connector.connect(host="localhost",user="root",password='',database="mydata")
             my_cursor=conn.cursor()
             query=("select * from register where email=%s and securityQ=%s and securityA=%s")
             value=(self.UserName.get(),self.securityQ_combo.get(),self.txt_security.get())
@@ -371,7 +371,7 @@ class Register:
             
         else:
             # messagebox.showinfo("Success","Register Successfully")
-            conn=mysql.connector.connect(host="localhost",user="root",password='Admin@123',database="mydata")
+            conn=mysql.connector.connect(host="localhost",user="root",password='',database="mydata")
             my_cursor=conn.cursor()
             query=("select * from register where email=%s")
             value=(self.var_email.get(),)
