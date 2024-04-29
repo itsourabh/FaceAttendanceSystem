@@ -141,7 +141,7 @@ class Register:
             
         else:
             # messagebox.showinfo("Success","Register Successfully")
-            conn=mysql.connector.connect(host="localhost",user="root",password='Admin@123',database="mydata")
+            conn=mysql.connector.connect(host="localhost",user="root",password='',database="mydata")
             my_cursor=conn.cursor()
             query=("select * from register where email=%s")
             value=(self.var_email.get(),)
