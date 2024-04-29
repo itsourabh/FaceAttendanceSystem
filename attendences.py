@@ -270,7 +270,7 @@ class Attendance:
             try:
                 Update=messagebox.askyesno("update","Do You Want to Update the Record",parent=self.root)
                 if Update>0:
-                    conn=mysql.connector.connect(host="localhost",user="root",password='Admin@123',database="face_recognition")
+                    conn=mysql.connector.connect(host="localhost",user="root",password='',database="face_recognition")
                     my_cursor=conn.cursor()
                     my_cursor.execute("update student set roll=%s,name=%s,dep=%s where StudentID=%s",(
                         
